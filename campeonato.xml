@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<campeonato idCampeonato="1">
+    <nome>10</nome>
+    <ano>2021</ano>
+    <nroClubes>10</nroClubes>
+    
+    <rodada idRodada="1">
+        <totalJogos>10</totalJogos>
+        <totalAmarelos>5</totalAmarelos>
+        <totalVermelhos>1</totalVermelhos>
+        <totalGols>20</totalGols>
+        <classificacaoRodada posicao="1">
+            <totalPontos>3</totalPontos>
+            <totalVitorias>1</totalVitorias>
+            <totalEmpates>0</totalEmpates>
+            <totalDerrotas>0</totalDerrotas>
+            <totalGolsPro>4</totalGolsPro>
+            <totalGolsContra>1</totalGolsContra>
+        </classificacaoRodada>
+    </rodada>
+    
+    <rodada idRodada="2">
+        <totalJogos>10</totalJogos>
+        <totalAmarelos>5</totalAmarelos>
+        <totalVermelhos>1</totalVermelhos>
+        <totalGols>20</totalGols>
+        <classificacaoRodada posicao="1">
+            <totalPontos>6</totalPontos>
+            <totalVitorias>2</totalVitorias>
+            <totalEmpates>0</totalEmpates>
+            <totalDerrotas>0</totalDerrotas>
+            <totalGolsPro>6</totalGolsPro>
+            <totalGolsContra>1</totalGolsContra>
+        </classificacaoRodada>
+    </rodada>
+    
+</campeonato>
+
+
+
+
+
+
+
+

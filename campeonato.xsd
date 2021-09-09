@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+   <!-- Tipo do nome -->
+    <xs:simpleType name="typeNome"> 
+        <xs:restriction base="xs:string"> 
+            <xs:minLength value="1"></xs:minLength>
+            <xs:maxLength value="50"></xs:maxLength>
+        </xs:restriction> 
+    </xs:simpleType>
+    
+    <!-- Tipo integer de 2 dígitos, permite 0 -->
+    <xs:simpleType name="contagem1"> 
+        <xs:restriction base="xs:integer"> 
+            <xs:maxInclusive value="99"></xs:maxInclusive>
+        </xs:restriction> 
+    </xs:simpleType>
+    
+    <!-- Tipo integer de 2 dígitos, acima de 0 -->
+    <xs:simpleType name="contagem2"> 
+        <xs:restriction base="xs:positiveInteger"> 
+            <xs:maxInclusive value="99"></xs:maxInclusive>
+        </xs:restriction> 
+    </xs:simpleType>
+    
+    <!-- Tipo integer de 3 dígitos, permite 0 -->
+    <xs:simpleType name="contagem3"> 
+        <xs:restriction base="xs:integer"> 
+            <xs:maxInclusive value="999"></xs:maxInclusive>
+        </xs:restriction> 
+    </xs:simpleType>
+    
+    <!-- Tipo integer de 3 dígitos, acima de 0 -->
+    <xs:simpleType name="contagem4"> 
+        <xs:restriction base="xs:positiveInteger"> 
+            <xs:maxInclusive value="999"></xs:maxInclusive>
+        </xs:restriction> 
+    </xs:simpleType>
+    
+    
+    
+    
+    
+    
+    
+    <xs:element name="campeonato">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nome" type="typeNome" nillable="false"></xs:element>
+                <xs:element name="ano" nillable="false">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:positiveInteger">
+                            <xs:totalDigits value="4"></xs:totalDigits>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="nroClubes" type="contagem2" nillable="false"></xs:element>   
+                <!-- ********** Rodada ********** -->
+                <xs:element name="rodada" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="totalJogos" type="contagem4" nillable="false"></xs:element>                            
+                            <xs:element name="totalAmarelos" type="contagem3" nillable="false"></xs:element>
+                            <xs:element name="totalVermelhos" type="contagem3" nillable="false"></xs:element>
+                            <xs:element name="totalGols" type="contagem3" nillable="false"></xs:element>
+                            
+                            <!-- ********** Classificacao rodada ********** -->
+                           <xs:element name="classificacaoRodada" maxOccurs="unbounded">
+                               <xs:complexType>
+                                   <xs:sequence>
+                                       <xs:element name="totalPontos" type="contagem3" nillable="false"></xs:element>
+                                       <xs:element name="totalVitorias" type="contagem1" nillable="false"></xs:element>
+                                       <xs:element name="totalEmpates" type="contagem1" nillable="false"></xs:element>
+                                       <xs:element name="totalDerrotas" type="contagem1" nillable="false"></xs:element>
+                                       <xs:element name="totalGolsPro" type="contagem3" nillable="false"></xs:element>
+                                       <xs:element name="totalGolsContra" type="contagem3" nillable="false"></xs:element>
+                                   </xs:sequence>
+                                   <xs:attribute name="posicao" type="contagem2" use="required"></xs:attribute>
+                               </xs:complexType>
+                           </xs:element>
+                            <!-- ******************** -->
+                        
+                        </xs:sequence>
+                        <xs:attribute name="idRodada" type="contagem2" use="required"></xs:attribute>
+                    </xs:complexType>
+                    
+                    <!-- PK da classificacao rodada -->
+                    <xs:key name="classificacaorodada_PK">
+                        <xs:selector xpath=".//classificacaoRodada"/>
+                        <xs:field xpath="@posicao"/>
+                    </xs:key>
+                    <!-- ******************** -->
+ 
+                </xs:element>
+                <!-- ******************** -->
+            </xs:sequence>
+            <xs:attribute name="idCampeonato" type="xs:positiveInteger" use="required"></xs:attribute>
+        </xs:complexType>
+        
+        <!-- PK do campeonato -->
+        <xs:key name="campeonato_PK">
+            <xs:selector xpath=".//campeonato"/>
+            <xs:field xpath="@idCampeonato"/>
+        </xs:key>
+        <!-- ******************** -->
+        
+        <!-- PK da rodada -->
+        <xs:key name="rodada_PK">
+            <xs:selector xpath=".//rodada"/>
+            <xs:field xpath="@idRodada"/>
+        </xs:key>
+        <!-- ******************** -->
+        
+
+    
+    </xs:element>
+    
+   
+        
+      
+    
+    
+    
+    
+ 
+
+    
+</xs:schema>
+    
+    
+
+
+
+
+
+
