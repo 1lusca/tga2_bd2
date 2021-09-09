@@ -19,6 +19,25 @@
             <totalGolsPro>4</totalGolsPro>
             <totalGolsContra>1</totalGolsContra>
         </classificacaoRodada>
+        <classificacaoRodada posicao="2">
+            
+            <totalPontos>3</totalPontos>
+            <totalVitorias>1</totalVitorias>
+            <totalEmpates>0</totalEmpates>
+            <totalDerrotas>0</totalDerrotas>
+            <totalGolsPro>2</totalGolsPro>
+            <totalGolsContra>2</totalGolsContra>
+        </classificacaoRodada>
+        <jogo>
+            <clube1Gol>2</clube1Gol>
+            <clube2Gol>0</clube2Gol>
+            <clube1Amarelo>1</clube1Amarelo>
+            <clube2Amarelo>3</clube2Amarelo>
+            <clube1Vermelho>0</clube1Vermelho>
+            <clube2Vermelho>0</clube2Vermelho>
+            <clube1Ponto>3</clube1Ponto>
+            <clube2Ponto>0</clube2Ponto>
+        </jogo>
     </rodada>
     
     <rodada idRodada="2">
@@ -34,6 +53,25 @@
             <totalGolsPro>6</totalGolsPro>
             <totalGolsContra>1</totalGolsContra>
         </classificacaoRodada>
+        <classificacaoRodada posicao="2">
+            
+            <totalPontos>4</totalPontos>
+            <totalVitorias>1</totalVitorias>
+            <totalEmpates>1</totalEmpates>
+            <totalDerrotas>0</totalDerrotas>
+            <totalGolsPro>2</totalGolsPro>
+            <totalGolsContra>1</totalGolsContra>
+        </classificacaoRodada>
+        <jogo>
+            <clube1Gol>2</clube1Gol>
+            <clube2Gol>0</clube2Gol>
+            <clube1Amarelo>1</clube1Amarelo>
+            <clube2Amarelo>3</clube2Amarelo>
+            <clube1Vermelho>0</clube1Vermelho>
+            <clube2Vermelho>0</clube2Vermelho>
+            <clube1Ponto>3</clube1Ponto>
+            <clube2Ponto>0</clube2Ponto>
+        </jogo>
     </rodada>
     
 </campeonato>

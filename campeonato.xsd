@@ -39,7 +39,13 @@
         </xs:restriction> 
     </xs:simpleType>
     
-    
+    <!-- Tipo dos pontos no jogo -->
+    <!-- Pode ser 0, 1 ou 3 -->
+    <xs:simpleType name="type_PontosJogo">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="0|1|3"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
     
     
     
@@ -65,7 +71,6 @@
                             <xs:element name="totalAmarelos" type="contagem3" nillable="false"></xs:element>
                             <xs:element name="totalVermelhos" type="contagem3" nillable="false"></xs:element>
                             <xs:element name="totalGols" type="contagem3" nillable="false"></xs:element>
-                            
                             <!-- ********** Classificacao rodada ********** -->
                            <xs:element name="classificacaoRodada" maxOccurs="unbounded">
                                <xs:complexType>
@@ -81,7 +86,22 @@
                                </xs:complexType>
                            </xs:element>
                             <!-- ******************** -->
-                        
+                            <!-- ********** Jogo ********** -->
+                            <xs:element name="jogo" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="clube1Gol" type="contagem1" nillable="false"></xs:element>
+                                        <xs:element name="clube2Gol" type="contagem1" nillable="false"></xs:element>
+                                        <xs:element name="clube1Amarelo" type="contagem1" nillable="false"></xs:element>
+                                        <xs:element name="clube2Amarelo" type="contagem1" nillable="false"></xs:element>
+                                        <xs:element name="clube1Vermelho" type="contagem1" nillable="false"></xs:element>
+                                        <xs:element name="clube2Vermelho" type="contagem1" nillable="false"></xs:element>
+                                        <xs:element name="clube1Ponto" type="type_PontosJogo" nillable="false"></xs:element>
+                                        <xs:element name="clube2Ponto" type="type_PontosJogo" nillable="false"></xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <!-- ******************** -->
                         </xs:sequence>
                         <xs:attribute name="idRodada" type="contagem2" use="required"></xs:attribute>
                     </xs:complexType>
