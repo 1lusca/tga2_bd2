@@ -3,8 +3,8 @@
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
     
-   <!-- Tipo do nome -->
-    <xs:simpleType name="typeNome"> 
+   <!-- Tipo dos nomes -->
+    <xs:simpleType name="type_Nome"> 
         <xs:restriction base="xs:string"> 
             <xs:minLength value="1"></xs:minLength>
             <xs:maxLength value="50"></xs:maxLength>
@@ -54,7 +54,7 @@
     <xs:element name="campeonato">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="nome" type="typeNome" nillable="false"></xs:element>
+                <xs:element name="nome" type="type_Nome" nillable="false"></xs:element>
                 <xs:element name="ano" nillable="false">
                     <xs:simpleType>
                         <xs:restriction base="xs:positiveInteger">
